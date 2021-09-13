@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Login</title>
+        <script type="text/javascript">
+
+            function login()
+            {
+                var txt1=document.getElementById("txtUsername").value
+                var txt2=document.getElementById("txtPassword").value
+
+                if(txt2=="" || txt1 =="")
+                {   
+                    var msg=document.getElementById("showmsg")
+                    msg.classList.remove("hideBox")
+                    msg.classList.add("showBox")
+                }
+                else{
+                    window.location.href="home.html" 
+                    window.localStorage.setItem('name', txt1);
+                }
+
+            }
+
+            function HideIcon()
+            {
+                var msg=document.getElementById("showmsg")
+                    msg.classList.remove("showBox")
+                    msg.classList.add("hideBox")
+            }
+
+
+
+
+
+        
+        </script>
+        
+        <link href="loginstyle.css" rel="stylesheet" type="text/css" />
+
+    </head>
+    <body>
+
+        <div class="box">
+            <h2>Login</h2>
+            <form>
+                <div class="inputBox">
+                    <label>Username</label>
+    
+                    <input type="text" id="txtUsername"/>
+                </div>
+                <div class="inputBox">
+                    <label>Password</label>
+    
+                    <input type="password" id="txtPassword"/>
+                </div>
+                <input type="button" value="Sign In" onclick="login()"/>
+            </form>
+            <div class="hideBox" id="showmsg">
+                <label>Please Enter Username & Password</label>
+                <img src="Images/Icons/Close (2).png" width="20px" onclick="HideIcon()"/>
+            </div>
+        </div>
+
+    </body>
+</html>
